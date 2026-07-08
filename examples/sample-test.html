@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>朱码 JS 编辑器</title>
+  <link rel="stylesheet" href="../css/drewmark-editor.min.css">
+  <script src="../../dev/js/drewmark-parser.js"></script>
+  <script src="../../dev/js/drewmark-editor.js"></script>
+  <script src="../../dev/js/emoji-data.js"></script>
+
+  <!-- <script src="js/emoji-data.js"></script>
+  <script src="js/validate.js"></script>
+  <script src="js/drewmark-parser.js"></script>
+  <script src="js/drewmark-editor.js"></script> -->
+
+  <!-- DrewMark Demo Text -->
+  <script src="demo_content-cn.js"></script>
+  
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+        'Microsoft YaHei', sans-serif;
+      background: #f0f2f5;
+      color: #212529;
+    }
+
+    /* ── Header ── */
+    .app-header {
+      background: linear-gradient(135deg, #4361ee 0%, #7c3aed 100%);
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 2px 12px rgba(67,97,238,0.3);
+      z-index: 100;
+    }
+
+    .app-header .logo {
+      font-size: 1.25em;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .app-header .logo-badge {
+      font-size: 0.55em;
+      background: rgba(255,255,255,0.2);
+      padding: 2px 8px;
+      border-radius: 20px;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+
+    .app-header .header-desc {
+      font-size: 0.82em;
+      opacity: 0.85;
+    }
+
+    /* ── Main ── */
+    main.app-main {
+      padding: 12px 16px;
+    }
+
+    /* ── Footer ── */
+    .app-footer {
+      text-align: center;
+      padding: 8px 20px;
+      font-size: 12px;
+      color: #adb5bd;
+      background: #fff;
+      border-top: 1px solid #dee2e6;
+    }
+    .app-footer a { color: #4361ee; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="app-header">
+  <div class="logo">
+    <img src="../images/logo-s.png" width="32"> 朱码
+    <span class="logo-badge">v3.8</span>
+  </div>
+  <span class="header-desc">在线编辑器</span>
+</header>
+
+
+<!-- Main Editor -->
+<main class="app-main">
+  <div id="drewmark-editor"></div>
+</main>
+
+<!-- Footer -->
+<footer class="app-footer">
+  DrewMark v3.8 &nbsp;·&nbsp; Copyright (c) 2026 DREW Neon
+</footer>
+
+<script type="module">
+  await drewmarkEditorLang({lang_path: '../lang'});
+  drewmarkEditor({
+    init_content: DEMO_CONTENT,
+    // editor_id: 'drewmark-editor',
+    // editor_class: '',
+    // textarea_height: 0,
+    textarea_name: 'post',
+    enable_download: true,
+    // onSave: ({ text, lines }) => {
+    //   // text: string — 完整内容
+    //   // lines: string[] — 行数组
+    //   fetch('/api/save', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ content: text })
+    //   });
+    // },
+
+    enable_emoji: true,
+    enable_style: true,
+    // enhance_codeblock: false,
+    // enhance_progress: false,
+    // disable_syntax: [],
+  });
+</script>
+</body>
+</html>

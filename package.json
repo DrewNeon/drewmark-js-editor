@@ -1,0 +1,31 @@
+{
+  "name": "drewmark-editor",
+  "version": "1.0.0",
+  "description": "A WYSIWYG editor tailor-made for the DrewMark markup language — zero dependencies, Vanilla JS",
+  "main": "js/drewmark-editor.min.js",
+  "files": [
+    "js/drewmark-editor.min.js",
+    "css/drewmark-editor.min.css",
+    "lang/en.json",
+    "lang/zh-cn.json"
+  ],
+  "keywords": [
+    "drewmark",
+    "editor",
+    "wysiwyg",
+    "markup",
+    "vanilla",
+    "zero-dependencies",
+    "i18n"
+  ],
+  "author": "drewneon",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drewneon/drewmark-js-editor.git"
+  },
+  "homepage": "https://github.com/drewneon/drewmark-js-editor",
+  "bugs": {
+    "url": "https://github.com/drewneon/drewmark-js-editor/issues"
+  }
+}
