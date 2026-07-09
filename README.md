@@ -12,7 +12,7 @@
 
 # DrewMark JS Editor
 
-A **WYSIWYG editor** tailor-made for [DrewMark](/drewneon/drewmark), built with **Vanilla JavaScript** — zero dependencies. With build-in [DrewMark JS Parser](/drewneon/drewmark-js-parser), DrewMark JS Editor is capable of real-time editing, previewing, and downloading DrewMark content.
+A **WYSIWYG editor** tailor-made for [DrewMark](../../../../drewneon/drewmark), built with **Vanilla JavaScript** — zero dependencies. With build-in [DrewMark JS Parser](../../../../drewneon/drewmark-js-parser), DrewMark JS Editor is capable of real-time editing, previewing, and downloading DrewMark content.
 
 ---
 
@@ -152,9 +152,9 @@ See [`docs/doc.md`](docs/doc.md) for the full API reference.
 
 ## Related Projects
 
-[DrewMark](/drewneon/drewmark) (syntax specification)
-[DrewMark JS Parser](/drewneon/drewmark-js-parser)
-[DrewMark JS Converter](/drewneon/drewmark-js-converter) (convert between three formats)
+[DrewMark](../../../../drewneon/drewmark) (syntax specification)
+[DrewMark JS Parser](../../../../drewneon/drewmark-js-parser)
+[DrewMark JS Converter](../../../../drewneon/drewmark-js-converter) (convert between three formats)
 
 ---
 
