@@ -21,7 +21,7 @@
 
 [DrewMark](../../../../../drewneon/drewmark) is a full-featured markup language system inspired by [Markdown](https://daringfireball.net/projects/markdown/) and [Showdown](https://github.com/showdownjs/showdown).
 
-DrewMark JS Editor is a WYSIWYG editor tailored specifically for DrewMark. Developed using Vanilla JavaScript, it includes [DrewMark JS Parser](../../../../../drewneon/drewmark-js-parser) to enable real-time online editing, previewing, and downloading of both DrewMark source text and parsed results. DrewMark JS Editor supports the complete set of DrewMark syntax rules. Please refer to [DrewMark document](../../../../../drewneon/drewmark/docs/doc.md) for detailed syntax specifications.
+DrewMark JS Editor is a WYSIWYG editor tailored specifically for DrewMark. Developed using Vanilla JavaScript, it includes [DrewMark JS Parser](../../../../../drewneon/drewmark-js-parser) to enable real-time online editing, previewing, and downloading of both DrewMark source text and parsed results. DrewMark JS Editor supports the complete set of DrewMark syntax rules. Please refer to [DrewMark document](../../../../../drewneon/drewmark/blob/main/docs/doc.md) for detailed syntax specifications.
 
 ---
 
@@ -119,7 +119,7 @@ DrewMark JS Editor supports functional adjustments via additional parameters: `d
 | `enhance_progress`  | boolean  | `true`        | Whether to append specific numerical values when parsing progress bars                              |
 | `disable_syntax`    | array    | `[]`          | Disables specified syntax: corresponding buttons are removed from the toolbar and syntax not parsed |
 
-For detailed descriptions of these parameters above, please refer to the "Optional Parameters" section in [DrewMark JS Parser documentation](../../../../../drewneon/drewmark-js-parser/docs/doc.md). Below are parameters exclusive to DrewMark JS Editor.
+For detailed descriptions of these parameters above, please refer to the "Optional Parameters" section in [DrewMark JS Parser documentation](../../../../../drewneon/drewmark-js-parser/blob/main/docs/doc.md). Below are parameters exclusive to DrewMark JS Editor.
 
 ### 5.2 Single Mode
 
