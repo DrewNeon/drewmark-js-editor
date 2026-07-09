@@ -19,9 +19,9 @@
 
 ## 1. 项目简介
 
-[朱码](https://github.com/drewneon/drewmark) 是一款受 [Markdown](https://daringfireball.net/projects/markdown/) 和 [Showdown](https://github.com/showdownjs/showdown) 所启发的全功能型标记语言系统。
+[朱码](/drewneon/drewmark) 是一款受 [Markdown](https://daringfireball.net/projects/markdown/) 和 [Showdown](https://github.com/showdownjs/showdown) 所启发的全功能型标记语言系统。
 
-*朱码 JS 编辑器*是为朱码量身定制的一款 WYSIWYG 编辑器，基于原生 JavaScript（Vanilla JS）开发，包含 [朱码 JS解析器](https://github.com/drewneon/drewmark-js-parser)，从而可实时在线编辑、预览、下载*朱码*原文和解析结果。*朱码 JS 编辑器*支持*朱码*的全部语法规则，请查看[朱码](https://github.com/drewneon/drewmark)了解详细的语法规则。
+*朱码 JS 编辑器*是为朱码量身定制的一款 WYSIWYG 编辑器，基于原生 JavaScript（Vanilla JS）开发，包含 [朱码 JS解析器](/drewneon/drewmark-js-parser)，从而可实时在线编辑、预览、下载*朱码*原文和解析结果。*朱码 JS 编辑器*支持*朱码*的全部语法规则，请查看[朱码](/drewneon/drewmark)了解详细的语法规则。
 
 ---
 
@@ -109,7 +109,7 @@ project/
 
 ### 5.1 共享参数
 
-*朱码 JS 编辑器*支持通过附加参数来调整功能：`drewmarkEditor({options})`，多个参数之间用逗号分隔。*朱码 JS 编辑器*依赖[朱码 JS 解析器](https://github.com/drewneon/drewmark-js-parser)来渲染预览框，并通过共享的参数控制解析器的表现。在 `drewmarkEditor()` 中使用下表中的参数，预览框中将按预期效果呈现，同时工具栏也会发生相应的变化。
+*朱码 JS 编辑器*支持通过附加参数来调整功能：`drewmarkEditor({options})`，多个参数之间用逗号分隔。*朱码 JS 编辑器*依赖[朱码 JS 解析器](/drewneon/drewmark-js-parser)来渲染预览框，并通过共享的参数控制解析器的表现。在 `drewmarkEditor()` 中使用下表中的参数，预览框中将按预期效果呈现，同时工具栏也会发生相应的变化。
 
 | 参数名              | 类型      | 默认值  | 说明                                                                                            |
 | ------------------- | -------- | ------- | ---------------------------------------------------------------------------------------------- |
@@ -119,7 +119,7 @@ project/
 | `enhance_progress`  | boolean  | `true`  | 是否在解析进度条时附加显示具体数值                                                                 |
 | `disable_syntax`    | array    | `[]`    | 禁用任意语法，即工具栏中不显示对应的按钮且预览框中不解析相应的语法                                    |
 
-上表中各参数的详细介绍请参见[朱码 JS 解析器文档](https://github.com/drewneon/drewmark-js-parser/docs/doc-cn.md)的”可选参数”章节。以下是*朱码 JS 编辑器*独有的参数。
+上表中各参数的详细介绍请参见[朱码 JS 解析器文档](/drewneon/drewmark-js-parser/docs/doc-cn.md)的”可选参数”章节。以下是*朱码 JS 编辑器*独有的参数。
 
 ### 5.2 单编辑器模式
 
