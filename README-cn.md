@@ -152,9 +152,9 @@ English docs: [docs/doc.md](docs/doc.md)
 
 ## 相关项目
 
-[朱码](../../../../drewneon/drewmark)（语法规范）
-[朱码 JS 解析器](../../../../drewneon/drewmark-js-parser)
-[朱码 JS 转换器](../../../../drewneon/drewmark-js-converter)（三种格式互转）
+* [朱码](../../../../drewneon/drewmark)（语法规范）
+* [朱码 JS 解析器](../../../../drewneon/drewmark-js-parser)
+* [朱码 JS 转换器](../../../../drewneon/drewmark-js-converter)（三种格式互转）
 
 ---
 
