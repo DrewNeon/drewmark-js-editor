@@ -89,7 +89,7 @@ const DEMO_CONTENT = [
   "",
   "## Audio",
   "",
-  "~(){media/demo_sound.mp3|mp3}",
+  "~(){media/demo_music.mp3|mp3}",
   "",
   "---",
   "",

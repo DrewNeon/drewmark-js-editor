@@ -19,9 +19,9 @@
 
 ## 1. Project Introduction
 
-[DrewMark](../../../../../drewneon/drewmark) is a full-featured markup language system inspired by [Markdown](https://daringfireball.net/projects/markdown/) and [Showdown](https://github.com/showdownjs/showdown).
+[DrewMark](https://github.com/drewneon/drewmark) is a full-featured markup language system inspired by [Markdown](https://daringfireball.net/projects/markdown/) and [Showdown](https://github.com/showdownjs/showdown).
 
-DrewMark JS Editor is a WYSIWYG editor tailored specifically for DrewMark. Developed using Vanilla JavaScript, it includes [DrewMark JS Parser](../../../../../drewneon/drewmark-js-parser) to enable real-time online editing, previewing, and downloading of both DrewMark source text and parsed results. DrewMark JS Editor supports the complete set of DrewMark syntax rules. Please refer to [DrewMark document](../../../../../drewneon/drewmark/blob/main/docs/doc.md) for detailed syntax specifications.
+DrewMark JS Editor is a WYSIWYG editor tailored specifically for DrewMark. Developed using Vanilla JavaScript, it includes [DrewMark JS Parser](https://github.com/drewneon/drewmark-js-parser) to enable real-time online editing, previewing, and downloading of both DrewMark source text and parsed results. DrewMark JS Editor supports the complete set of DrewMark syntax rules. Please refer to [DrewMark document](https://github.com/drewneon/drewmark/blob/main/docs/doc.md) for detailed syntax specifications.
 
 ---
 
@@ -46,7 +46,7 @@ project/
 │   ├── demo_content-cn.js // Initial DrewMark content corresponding to the above
 │   └── media
 │       ├── demo_pic.jpg // Image for DrewMark examples
-│       ├── demo_sound.mp3 // Audio for DrewMark examples
+│       ├── demo_music.mp3 // Audio for DrewMark examples
 │       └── demo_vid.mp4 // Video for DrewMark examples
 └── readme.md
 ```
@@ -55,23 +55,72 @@ project/
 
 ## 3. Quick Start
 
-You can embed DrewMark JS Editor into an HTML page with just a few lines of JavaScript code.
+### Option 1: Bundled Projects (Node.js + Build Tools)
+
+For projects using build tools such as Webpack, Vite, or Rollup.
+
+**1. Install Dependencies**
+
+```bash
+npm install drewmark-editor
+```
+
+**2. Import and Use in Source Code**
+
+Import the Editor and its stylesheet in your entry file or component, then call the initialization function:
+
+```javascript
+// Import styles (adjust the path according to your build tool's requirements)
+import 'drewmark-editor/css/drewmark-editor.min.css';
+
+// Import the Editor
+import drewmarkEditor from 'drewmark-editor';
+
+// Initialize the Editor (mounts to the #drewmark-editor container by default)
+drewmarkEditor();
+
+```
+
+**Note:** Ensure that a container element with the `id` of `drewmark-editor` exists in your HTML, or specify a custom container via parameters during initialization. Please refer to the [Optional Parameters](#5-optional-parameters) chapter for details.
+
+---
+
+### Option 2: Direct Browser Usage (No Build Tools)
+
+For plain HTML pages without a Node.js environment. When loaded via a `<script>` tag, the Editor will be mounted as a global variable.
+
+**1. Download Library**
+
+Download `js/drewmark-editor.min.js` and `css/drewmark-editor.min.css` from this repository into your project directory. You may skip this step if referencing directly via CDN.
+
+**2. Include Scripts**
+
+Choose one of the following two methods:
+
++ Reference the locally downloaded scripts:
+```html
+<head>
+  <link rel="stylesheet" href="path/to/drewmark-editor.min.css">
+</head>
+<script src="path/to/drewmark-editor.min.js"></script>
+```
+
++ Reference scripts directly from CDN (skips the download step):
+```html
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/drewmark-editor@latest/css/drewmark-editor.min.css">
+</head>
+<script src="https://unpkg.com/drewmark-editor@latest/js/drewmark-editor.min.js"></script>
+```
+
+**3. Load the Editor in the Default Container Element**
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/drewmark-editor.min.css"> <!-- Include its Stylesheet -->
-</head>
-<body>
-  <div id="drewmark-editor"></div> <!-- Container element for loading the Editor -->
-  <script src="js/drewmark-editor.min.js"></script> <!-- Include DrewMark JS Editor -->
+  <div id="drewmark-editor"></div>
   <script>
-    drewmarkEditor(); // Initialize the Editor
+    drewmarkEditor();
   </script>
-</body>
-</html>
+
 ```
 
 ---
@@ -109,17 +158,17 @@ When mannually typing in the Edit Area, certain keyboard keys have special behav
 
 ### 5.1 Shared Parameters
 
-DrewMark JS Editor supports functional adjustments via additional parameters: `drewmarkEditor({opts})`. Multiple parameters should be separated by commas.  rewMark JS Editor relies on the included [DrewMark JS Parser](../../../../../drewneon/drewmark-js-parser) to render the Preview Area and controls the parser's behavior through shared parameters. Using the parameters listed below in `drewmarkEditor()` will produce the expected rendering in the Preview Area and trigger corresponding changes in the Toolbar.
+DrewMark JS Editor supports functional adjustments via additional parameters: `drewmarkEditor({opts})`. Multiple parameters should be separated by commas.  rewMark JS Editor relies on the included [DrewMark JS Parser](https://github.com/drewneon/drewmark-js-parser) to render the Preview Area and controls the parser's behavior through shared parameters. Using the parameters listed below in `drewmarkEditor()` will produce the expected rendering in the Preview Area and trigger corresponding changes in the Toolbar.
 
-| Parameter Name      | Type     | Default Value | Description                                                                                         |
-| ------------------- | -------- | ------------- | --------------------------------------------------------------------------------------------------- |
-| `enable_emoji`      | boolean  | `false`       | Whether to show the emoji button in the toolbar and parse emoji syntax in the preview               |
-| `enable_style`      | boolean  | `false`       | Whether to show the style block button in the toolbar and the style attribute option in the attribute modal box as well as parse style block and style attribute syntax in the preview |
-| `enhance_codeblock` | boolean  | `true`        | Whether to append code language display and copy button when parsing code blocks                    |
-| `enhance_progress`  | boolean  | `true`        | Whether to append specific numerical values when parsing progress bars                              |
-| `disable_syntax`    | array    | `[]`          | Disables specified syntax: corresponding buttons are removed from the toolbar and syntax not parsed |
+| Parameter Name (abbr)       | Type     | Default Value | Description                                                                                         |
+| --------------------------- | -------- | ------------- | --------------------------------------------------------------------------------------------------- |
+| `enable_emoji` (`e_e`)      | boolean  | `false`       | Whether to show the emoji button in the toolbar and parse emoji syntax in the preview               |
+| `enable_style` (`e_s`)      | boolean  | `false`       | Whether to show the style block button in the toolbar and the style attribute option in the attribute modal box as well as parse style block and style attribute syntax in the preview |
+| `enhance_codeblock` (`e_c`) | boolean  | `true`        | Whether to append code language display and copy button when parsing code blocks                    |
+| `enhance_progress` (`e_p`)  | boolean  | `true`        | Whether to append specific numerical values when parsing progress bars                              |
+| `disable_syntax` (`d_s`)    | array    | `[]`          | Disables specified syntax: corresponding buttons are removed from the toolbar and syntax not parsed |
 
-For detailed descriptions of these parameters above, please refer to the "Optional Parameters" section in [DrewMark JS Parser documentation](../../../../../drewneon/drewmark-js-parser/blob/main/docs/doc.md). Below are parameters exclusive to DrewMark JS Editor.
+For detailed descriptions of these parameters above, please refer to the "Optional Parameters" section in [DrewMark JS Parser documentation](https://github.com/drewneon/drewmark-js-parser/blob/main/docs/doc.md). Below are parameters exclusive to DrewMark JS Editor.
 
 ### 5.2 Single Mode
 
@@ -357,15 +406,15 @@ drewmarkEditor({
 
 ### 5.4 Parameter Overview
 
-| Parameter Name    | Type           | Default for Single Mode      | Default for Multi Mode                         | Description                                                     |
-| ----------------- | -------------- | ---------------------------- | ---------------------------------------------- | --------------------------------------------------------------- |
-| `editor_id`       | string         | `drewmark-editor`            | **N/A**                                        | Specify editor's container via `id` attribute                   |
-| `editor_class`    | string         | **N/A**                      | `''` (Must be specified)                       | Specify editors' containers via `class` attribute               |
-| `init_content`    | string         | `''`                         | `''`                                           | Initial content loaded with the Editor                          |
-| `textarea_name`   | string         | `content`                    | `content_0`, `content_1`, ... (auto-increment) | Value of the `name` attribute for the Editor's `<textarea>`     |
-| `textarea_height` | number / array | `0` (Fills remaining height) | `200` (px)                                     | Set height of Edit Area and Preview Area                       |
-| `enable_download` | boolean        | `false`                      | `false`                                        | Whether to display download button in toolbar                   |
-| `onSave`          | function       | `null`                       | **N/A**                                        | Display save button in toolbar for submitting content to server |
+| Parameter Name (abbr)    | Type           | Default for Single Mode      | Default for Multi Mode                         | Description                                                     |
+| ------------------------ | -------------- | ---------------------------- | ---------------------------------------------- | --------------------------------------------------------------- |
+| `editor_id` (`eid`)      | string         | `drewmark-editor`            | **N/A**                                        | Specify editor's container via `id` attribute                   |
+| `editor_class` (`ec`)    | string         | **N/A**                      | `''` (Must be specified)                       | Specify editors' containers via `class` attribute               |
+| `init_content` (`ic`)    | string         | `''`                         | `''`                                           | Initial content loaded with the Editor                          |
+| `textarea_name` (`tn`)   | string         | `content`                    | `content_0`, `content_1`, ... (auto-increment) | Value of the `name` attribute for the Editor's `<textarea>`     |
+| `textarea_height` (`th`) | number / array | `0` (Fills remaining height) | `200` (px)                                     | Set height of Edit Area and Preview Area                        |
+| `enable_download` (`ed`) | boolean        | `false`                      | `false`                                        | Whether to display download button in toolbar                   |
+| `onSave` (`os`)          | function       | `null`                       | **N/A**                                        | Display save button in toolbar for submitting content to server |
 
 ---
 
@@ -402,7 +451,7 @@ drewmarkEditorLang({opts}).then(function () {
 
 ### 6.1 Custom Language File Path
 
-**Parameter Name**: `lang_path`
+**Parameter Name**: `lang_path` (or abbreviated as `lp`)
 **Type**: string
 **Default Value**: `./lang`
 **Accepted Values**: absolute path or relative path
@@ -415,11 +464,11 @@ drewmarkEditorLang({./lang_path}).then(function () { // use relative path
   drewmarkEditor();
 });
 ```
-**Description**: By default, DrewMark JS Editor looks for language files in the `lang` directory sibling to its own location. Use this parameter to specify a custom directory for language files.
+**Description**: By default, DrewMark JS Editor looks for language files in the `lang` directory sibling to its own location, and HTML files are normally resided in the upper directory, hence the language files are found by keeping this parameter to its default value. However, if the directory structure is different from this, please use this parameter to specify a custom directory for the language files. **If `drewmark-js-editor.min.js` is included via CDN, `lang_path` must be set to `https://unpkg.com/drewmark-editor@latest/lang`!**
 
 ### 6.2 Custom Fallback Language
 
-**Parameter Name**: `fallback_lang`
+**Parameter Name**: `fallback_lang` (or abbreviated as `fl`)
 **Type**: string
 **Default Value**: `en`
 **Usage**:
@@ -435,4 +484,4 @@ drewmarkEditorLang({fallback_lang: 'language_name'}).then(function () {
 
 ---
 
-*Version: v3.8*
+*Version: v1.3.8*

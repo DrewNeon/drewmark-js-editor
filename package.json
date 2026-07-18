@@ -1,6 +1,6 @@
 {
   "name": "drewmark-editor",
-  "version": "1.0.0",
+  "version": "1.3.8",
   "description": "A WYSIWYG editor tailor-made for the DrewMark markup language — zero dependencies, Vanilla JS",
   "main": "js/drewmark-editor.min.js",
   "files": [

@@ -12,27 +12,76 @@
 
 # 朱码 JS 编辑器
 
-为[朱码](../../../../drewneon/drewmark)量身定制的**所见即所得**编辑器，基于**原生 JavaScript**（Vanilla JS）开发，零依赖。内置[朱码 JS 解析器](../../../../drewneon/drewmark-js-parser)，实现实时编辑、预览和下载朱码格式的内容。
+为[朱码](https://gitee.com/drewneon/drewmark)量身定制的**所见即所得**编辑器，基于**原生 JavaScript**（Vanilla JS）开发，零依赖。内置[朱码 JS 解析器](https://gitee.com/drewneon/drewmark-js-parser)，实现实时编辑、预览和下载朱码格式的内容。
 
 ---
 
 ## 快速开始
 
+### 方式一：工程化项目（Node.js + 构建工具）
+
+适用于使用 Webpack、Vite、Rollup 等构建工具的项目。
+
+**1. 安装依赖**
+
+```bash
+npm install drewmark-editor
+```
+
+**2. 在源码中导入并使用**
+
+在入口文件或组件中导入编辑器及样式文件，并调用初始化函数：
+
+```javascript
+// 导入样式（根据实际构建工具要求调整路径）
+import 'drewmark-editor/css/drewmark-editor.min.css';
+
+// 导入编辑器
+import drewmarkEditor from 'drewmark-editor';
+
+// 初始化编辑器（默认挂载到 #drewmark-editor 容器）
+drewmarkEditor();
+```
+
+注：请确保 HTML 中存在 `id` 为 `drewmark-editor` 的容器元素，或在初始化时通过参数指定自定义容器，详见文档中[可选参数](docs/doc-cn.md#5-可选参数)章节。
+
+---
+
+### 方式二：浏览器直接调用（无构建工具）
+
+适用于纯 HTML 页面，无需 Node.js 环境，通过 `<script>` 标签加载后，编辑器会以全局变量的形式挂载。
+
+**1. 下载依赖**
+
+从本仓库下载 `js/drewmark-editor.min.js`、`css/drewmark-editor.min.css` 和 `lang/zh-cn.json` 至项目目录，如通过 CDN 直接引用则可跳过此步骤。
+
+**2. 引用脚本**
+
+两种方法二选一：
+
++ 引用下载到本地的脚本：
 ```html
-<!DOCTYPE html>
-<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/drewmark-editor.min.css">
+  <link rel="stylesheet" href="path/to/drewmark-editor.min.css">
 </head>
-<body>
+<script src="path/to/drewmark-editor.min.js"></script>
+```
+
++ 从 CDN 直接引用脚本（跳过下载步骤）：
+```html
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/drewmark-editor@latest/css/drewmark-editor.min.css">
+</head>
+<script src="https://unpkg.com/drewmark-editor@latest/js/drewmark-editor.min.js"></script>
+```
+
+**3. 在默认容器元素中加载编辑器**
+
+```html
   <div id="drewmark-editor"></div>
-  <script src="js/drewmark-editor.min.js"></script>
   <script>
     drewmarkEditor();
   </script>
-</body>
-</html>
 ```
 
 ---
@@ -152,9 +201,9 @@ English docs: [docs/doc.md](docs/doc.md)
 
 ## 相关项目
 
-* [朱码](../../../../drewneon/drewmark)（语法规范）
-* [朱码 JS 解析器](../../../../drewneon/drewmark-js-parser)
-* [朱码 JS 转换器](../../../../drewneon/drewmark-js-converter)（三种格式互转）
+* [朱码](https://gitee.com/drewneon/drewmark)（语法规范）
+* [朱码 JS 解析器](https://gitee.com/drewneon/drewmark-js-parser)
+* [朱码 JS 转换器](https://gitee.com/drewneon/drewmark-js-converter)（三种格式互转）
 
 ---
 

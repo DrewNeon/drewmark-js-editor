@@ -84,8 +84,8 @@
 <!-- Header -->
 <header class="app-header">
   <div class="logo">
-    <img src="../images/logo-s.png" width="32"> 朱码
-    <span class="logo-badge">v3.8</span>
+    <img src="../images/logo-light.png" width="32"> 朱码
+    <span class="logo-badge">v1.3.8</span>
   </div>
   <span class="header-desc">在线编辑器</span>
 </header>
@@ -98,11 +98,12 @@
 
 <!-- Footer -->
 <footer class="app-footer">
-  DrewMark v3.8 &nbsp;·&nbsp; Copyright (c) 2026 DREW Neon
+  DrewMark v1.3.8 &nbsp;·&nbsp; Copyright (c) 2026 DREW Neon
 </footer>
 
 <script type="module">
-  await drewmarkEditorLang({lang_path: '../lang'});
+  // await drewmarkEditorLang({lang_path: '../lang'});
+  await drewmarkEditorLang({lang_path: 'https://unpkg.com/drewmark-editor@latest/lang'});
   drewmarkEditor({
     init_content: DEMO_CONTENT,
     // editor_id: 'drewmark-editor',

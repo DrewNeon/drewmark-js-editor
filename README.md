@@ -12,27 +12,78 @@
 
 # DrewMark JS Editor
 
-A **WYSIWYG editor** tailor-made for [DrewMark](../../../../drewneon/drewmark), built with **Vanilla JavaScript** — zero dependencies. With build-in [DrewMark JS Parser](../../../../drewneon/drewmark-js-parser), DrewMark JS Editor is capable of real-time editing, previewing, and downloading DrewMark content.
+A **WYSIWYG editor** tailor-made for [DrewMark](https://github.com/drewneon/drewmark), built with **Vanilla JavaScript** — zero dependencies. With build-in [DrewMark JS Parser](https://github.com/drewneon/drewmark-js-parser), DrewMark JS Editor is capable of real-time editing, previewing, and downloading DrewMark content.
 
 ---
 
 ## Quick Start
 
+### Option 1: Bundled Projects (Node.js + Build Tools)
+
+For projects using build tools such as Webpack, Vite, or Rollup.
+
+**1. Install Dependencies**
+
+```bash
+npm install drewmark-editor
+```
+
+**2. Import and Use in Source Code**
+
+Import the Editor and its stylesheet in your entry file or component, then call the initialization function:
+
+```javascript
+// Import styles (adjust the path according to your build tool's requirements)
+import 'drewmark-editor/css/drewmark-editor.min.css';
+
+// Import the Editor
+import drewmarkEditor from 'drewmark-editor';
+
+// Initialize the Editor (mounts to the #drewmark-editor container by default)
+drewmarkEditor();
+
+```
+
+**Note:** Ensure that a container element with the `id` of `drewmark-editor` exists in your HTML, or specify a custom container via parameters during initialization. Please refer to the [Optional Parameters](docs/doc-cn.md#5-optional-parameters) chapter in the Document for details.
+
+---
+
+### Option 2: Direct Browser Usage (No Build Tools)
+
+For plain HTML pages without a Node.js environment. When loaded via a `<script>` tag, the Editor will be mounted as a global variable.
+
+**1. Download Library**
+
+Download `js/drewmark-editor.min.js` and `css/drewmark-editor.min.css` from this repository into your project directory. You may skip this step if referencing directly via CDN.
+
+**2. Include Scripts**
+
+Choose one of the following two methods:
+
++ Reference the locally downloaded scripts:
 ```html
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/drewmark-editor.min.css">
+  <link rel="stylesheet" href="path/to/drewmark-editor.min.css">
 </head>
-<body>
+<script src="path/to/drewmark-editor.min.js"></script>
+```
+
++ Reference scripts directly from CDN (skips the download step):
+```html
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/drewmark-editor@latest/css/drewmark-editor.min.css">
+</head>
+<script src="https://unpkg.com/drewmark-editor@latest/js/drewmark-editor.min.js"></script>
+```
+
+**3. Load the Editor in the Default Container Element**
+
+```html
   <div id="drewmark-editor"></div>
-  <script src="js/drewmark-editor.min.js"></script>
   <script>
     drewmarkEditor();
   </script>
-</body>
-</html>
+
 ```
 
 ---
@@ -118,7 +169,7 @@ drewmarkEditor({
 
 ## Multi-Language
 
-The editor auto-detects the page language via `<html lang>`. To customize:
+The Editor auto-detects the page language via `<html lang>`. To customize:
 
 ```html
 <script type="module">
@@ -152,9 +203,9 @@ See [`docs/doc.md`](docs/doc.md) for the full API reference.
 
 ## Related Projects
 
-* [DrewMark](../../../../drewneon/drewmark) (syntax specification)
-* [DrewMark JS Parser](../../../../drewneon/drewmark-js-parser)
-* [DrewMark JS Converter](../../../../drewneon/drewmark-js-converter) (convert between three formats)
+* [DrewMark](https://github.com/drewneon/drewmark) (syntax specification)
+* [DrewMark JS Parser](https://github.com/drewneon/drewmark-js-parser)
+* [DrewMark JS Converter](https://github.com/drewneon/drewmark-js-converter) (convert between three formats)
 
 ---
 
