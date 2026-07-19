@@ -1,6 +1,6 @@
 const DEMO_CONTENT = [
   "!!! [A[C]]",
-  "!(DrewMark Logo){../images/logo.png}",
+  "!(DrewMark Logo){../images/drewmark-logo.svg}",
   "!!!",
   "",
   "# DrewMark Demo ::rocket:: [A[C]]",

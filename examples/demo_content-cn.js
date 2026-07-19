@@ -1,6 +1,6 @@
 const DEMO_CONTENT = [
     "!!! [A[C]]",
-    "!(朱码Logo){../images/logo.png}",
+    "!(朱码Logo){../images/drewmark-logo.svg}",
     "!!!",
     "",
     "# 欢迎使用朱码::rocket:: [A[C]]",
